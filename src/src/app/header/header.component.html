@@ -1,1 +1,42 @@
-<p class="text-red-500">header works!</p>
+<div class="fixed top-0 w-full bg-gray-900 py-4 px-4 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+    <div class="flex justify-between items-center">
+        <img class="h-8 w-auto" src="https://aepnat-workcation-tailwind.netlify.app/img/logo-inverted.svg" alt="there is no image">
+        <button *ngIf="isShow" (click)="hideMenu()">
+            <svg class="w-6 h-6 fill-current md:hidden size-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" fill-rule="evenodd" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <button *ngIf="!isShow" (click)="showMenu()">
+            <svg class="w-6 h-6 fill-current md:hidden size-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+        </button>
+    </div>
+    <div [ngClass]="isShow ? '': 'hidden'" class="md:block">
+        <ul class="flex flex-col md:flex-row gap-4 py-4 md:py-0 md:items-center md:justify-between font-semibold text-white">
+            <li>
+                List your property
+            </li>
+            <li>
+                Trips
+            </li>
+            <li>
+                Messages
+            </li>
+            <li class="flex flex-col gap-4 px-2 pt-4 border-t border-gray-700 md:border-none md:pt-0">
+                <div class="relative flex items-center gap-4">
+                    <button (click)="showMenu()" class="relative z-50 w-8 h-8 rounded-full overflow-hidden border-2 border-gray-400">
+                        <img class="absolute object-cover object-center h-full" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80" alt="avatar">
+                    </button>
+                    <p class="font-semibold md:hidden">Jane Doe</p>
+                    <ul *ngIf="isShow" class="z-50 flex flex-col gap-2 text-gray-300 md:text-gray-700 md:absolute md:top-0 md:mt-8 md:right-0 md:w-48 md:bg-white md:p-4 md:rounded-lg">
+                        <li>Account settings</li>
+                        <li>Support</li>
+                        <li>Sign out</li>
+                    </ul>
+                    <div *ngIf="isShow" class="fixed inset-0 bg-opacity-40 bg-black z-0"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
