@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  Input,
+} from '@angular/core';
+
+import { DestinationModel } from '../../model/model';
 
 @Component({
   selector: 'app-destination-item',
@@ -7,5 +12,5 @@ import { Component } from '@angular/core';
   templateUrl: './destination-item.component.html',
 })
 export class DestinationItemComponent {
-
+  @Input({ required: true }) Destination!: DestinationModel;
 }

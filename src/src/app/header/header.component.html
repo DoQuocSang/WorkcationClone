@@ -1,4 +1,4 @@
-<div class="w-full bg-gray-900 py-4 px-4 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+<div class="relative z-50 w-full bg-gray-900 py-4 px-4 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
     <div class="flex justify-between items-center">
         <img class="h-8 w-auto" src="https://aepnat-workcation-tailwind.netlify.app/img/logo-inverted.svg" alt="there is no image">
         <button *ngIf="isShow" (click)="hideMenu()">
@@ -13,7 +13,7 @@
         </button>
     </div>
     <div [ngClass]="isShow ? '': 'hidden'" class="md:block">
-        <ul class="flex flex-col md:flex-row gap-4 py-4 md:py-0 md:items-center md:justify-between font-semibold text-white">
+        <ul class="flex flex-col md:flex-row gap-4 md:py-0 md:items-center md:justify-between font-semibold text-white">
             <li>
                 List your property
             </li>
@@ -29,16 +29,29 @@
                         <img class="absolute inset-0 h-full w-full object-cover object-center" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80" alt="avatar">
                     </button>
                     <p class="font-semibold md:hidden">Jane Doe</p>
-                    <div class="z-50 order-last basis-full md:basis-0 md:absolute md:bottom-0 md:right-0">
-                        <ul *ngIf="isShow" class="flex flex-col gap-2 text-gray-300 md:text-gray-700 md:w-48 md:bg-white md:p-4 md:rounded-lg md:translate-y-full">
-                            <li>Account settings</li>
-                            <li>Support</li>
-                            <li>Sign out</li>
+                    <div class="z-50 order-last basis-full md:basis-0 md:absolute md:-bottom-2 md:right-0">
+                        <ul *ngIf="isShow" class="flex flex-col gap-2 md:gap-0 text-gray-300 overflow-hidden md:text-gray-700 md:w-48 font-normal md:bg-white md:py-1 md:rounded-lg md:translate-y-full">
+                            <li>
+                                <button class="md:hover:bg-blue-500 text-left md:bg-white hover:text-white w-full md:py-2 md:px-4">
+                                    Account settings
+                                </button>
+                            </li>
+                            <li>
+                                <button class="md:hover:bg-blue-500 text-left md:bg-white hover:text-white w-full md:py-2 md:px-4">
+                                    Support
+                                </button>
+                            </li>
+                            <li>
+                                <button class="md:hover:bg-blue-500 text-left md:bg-white hover:text-white w-full md:py-2 md:px-4">
+                                    Sign out
+                                </button>
+                            </li>
                         </ul>
                     </div>
-                    <div *ngIf="isShow" (click)="hideMenu()" class="fixed inset-0 bg-opacity-40 bg-black z-0"></div>
                 </div>
             </li>
         </ul>
     </div>
 </div>
+
+<div *ngIf="isShow" (click)="hideMenu()" class="fixed inset-0 bg-opacity-40 bg-black z-0"></div>
