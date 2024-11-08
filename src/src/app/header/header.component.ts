@@ -9,13 +9,13 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   isShow = false;
-  svgColor = "#e5e7eb";
+  svgColor = '#e5e7eb';
 
-  showMenu(){
+  showMenu() {
     this.isShow = true;
   }
 
-  hideMenu(){
+  hideMenu() {
     this.isShow = false;
   }
 }

@@ -1,15 +1,21 @@
 <div class="flex justify-center items-center bg-gray-100">
-    <div class="p-10 max-w-lg md:max-w-screen-sm w-full lg:max-w-6xl">
-        <div>
-            <h1 class="text-lg md:text-xl text-gray-900 font-semibold">
-                Popular destinations
-            </h1>
-           <p class="text-base text-gray-500">
-                A selection of great work-friendly cities with lots to see and explore.
-           </p>
-        </div>
-        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8 my-8">
-            <app-destination-item [Destination]="item" *ngFor="let item of DetionationArr"> </app-destination-item>
-        </div>
+  <div class="p-10 max-w-lg md:max-w-screen-sm w-full lg:max-w-6xl">
+    <div>
+      <h1 class="text-lg md:text-xl text-gray-900 font-semibold">
+        Popular destinations
+      </h1>
+      <p class="text-base text-gray-500">
+        A selection of great work-friendly cities with lots to see and explore.
+      </p>
     </div>
+    <div
+      class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8 my-8"
+    >
+      <app-destination-item
+        [Destination]="item"
+        *ngFor="let item of DetionationArr"
+      >
+      </app-destination-item>
+    </div>
+  </div>
 </div>
